@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/titouan.gouello/source/repos/ProjetsCIR2_Transports/traffic_light
+# Install script for directory: C:/Users/titouan.gouello/source/repos/ProjetsCIR2_Transports/Header
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
