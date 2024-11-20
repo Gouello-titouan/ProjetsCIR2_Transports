@@ -19,7 +19,7 @@ const std::string path_image(_PATH_IMG_);
 
 using namespace std::chrono_literals;
 
-static const sf::Color Orange(255, 165, 0);
+static const sf::Color Orange(255, 165, 0);//jhguyg
 
 const auto time_transit = 3s;
 const auto time_waiting = 8s;
