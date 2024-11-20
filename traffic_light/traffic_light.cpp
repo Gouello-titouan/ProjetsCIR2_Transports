@@ -4,6 +4,16 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
+
+/*
+F_verticale_D = Feu Vericalte Droit
+F_verticale_G = Feu Vericalte Gauche 
+
+F_horizontale_D = Feu Horizontale Droit
+F_horizontale_G = Feu Horizontale Gauche
+
+*/
+
 using namespace std;
 using namespace sf;
 
@@ -19,7 +29,7 @@ const std::string path_image(_PATH_IMG_);
 
 using namespace std::chrono_literals;
 
-static const sf::Color Orange(255, 165, 0);//dzfsytfytf
+static const sf::Color Orange(255, 165, 0);
 
 const auto time_transit = 3s;
 const auto time_waiting = 8s;
@@ -132,16 +142,16 @@ void print_traffic_light(Traffic_light &traffic_light_master, Traffic_light &tra
 int main()
 {
 
-    // Fond d'écran
-    /*Texture backgroundImage;
-    Sprite backgroundSprite;
+    /* Image feu triclore
+    Texture trafficlight;
+    Sprite trafficlightspirite;
 
-    if (!backgroundImage.loadFromFile(path_image + "carrefour.jpg")) {
+    if (!trafficlight.loadFromFile(path_image + "trafficlight.png")) {
         cerr << "Erreur pendant le chargement des images" << endl;
         return EXIT_FAILURE; // On ferme le programme
     }
 
-    backgroundSprite.setTexture(backgroundImage);*/
+    trafficlightspirite.setTexture(trafficlight);*/
     
 
 
@@ -157,22 +167,36 @@ int main()
 
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "My window");
 
-    float busa = 370, busb = 600, size = 1000, radius = 10;
+    float busa = 370, busb = 600, busc = 615, busd = 365, size = 1000, radius = 10;
     sf::Vertex line1[] = {sf::Vertex(sf::Vector2f(0, busa)), sf::Vertex(sf::Vector2f(size, busa))};
     sf::Vertex line2[] = {sf::Vertex(sf::Vector2f(0, busb)), sf::Vertex(sf::Vector2f(size, busb))};
+    //sf::Vertex line5[] = { sf::Vertex(sf::Vector2f(0, busc)), sf::Vertex(sf::Vector2f(size, busc)) };
+    //sf::Vertex line6[] = { sf::Vertex(sf::Vector2f(0, busd)), sf::Vertex(sf::Vector2f(size, busd)) };
 
     sf::Vertex line3[] = {sf::Vertex(sf::Vector2f(busa, 0)), sf::Vertex(sf::Vector2f(busa, size))};
     sf::Vertex line4[] = {sf::Vertex(sf::Vector2f(busb, 0)), sf::Vertex(sf::Vector2f(busb, size))};
+   /* sf::Vertex line7[] = { sf::Vertex(sf::Vector2f(busc, 0)), sf::Vertex(sf::Vector2f(busc, size)) };
+    sf::Vertex line8[] = { sf::Vertex(sf::Vector2f(busd, 0)), sf::Vertex(sf::Vector2f(busd, size)) };*/
 
 
-    sf::CircleShape circle1(radius);
-    circle1.setFillColor(sf::Color::Blue);
-    circle1.setOrigin(circle1.getRadius() / 2, circle1.getRadius() / 2);
-    circle1.setPosition(busb + radius / 2, busb + radius / 2);
-    sf::CircleShape circle2(radius);
-    circle2.setFillColor(sf::Color::Green);
-    circle2.setOrigin(circle2.getRadius() / 2, circle2.getRadius() / 2);
-    circle2.setPosition(busb + radius / 2, busa - radius);
+    sf::CircleShape F_verticale_D(radius);
+    F_verticale_D.setFillColor(sf::Color::Red);
+    F_verticale_D.setOrigin(F_verticale_D.getRadius() / 2, F_verticale_D.getRadius() / 2);
+    F_verticale_D.setPosition(busb + radius / 2, busb + radius / 2);
+    sf::CircleShape F_horizontale_D(radius);
+    F_horizontale_D.setFillColor(sf::Color::Green);
+    F_horizontale_D.setOrigin(F_horizontale_D.getRadius() / 2, F_horizontale_D.getRadius() / 2);
+    F_horizontale_D.setPosition(busb + radius / 2, busa - radius);
+
+
+    sf::CircleShape F_verticale_G(radius);
+    F_verticale_G.setFillColor(sf::Color::Red);
+    F_verticale_G.setOrigin(F_verticale_G.getRadius() / 2, F_verticale_G.getRadius() / 2);
+    F_verticale_G.setPosition(busd + radius / 2, busd - radius);
+    sf::CircleShape F_horizontal_G(radius);
+    F_horizontal_G.setFillColor(sf::Color::Green);
+    F_horizontal_G.setOrigin(F_horizontal_G.getRadius() / 2, F_horizontal_G.getRadius() / 2);
+    F_horizontal_G.setPosition(busd + radius / 2, busc - radius);
 
     while (window.isOpen())
     {
@@ -188,17 +212,24 @@ int main()
         }
         window.clear(sf::Color::Black);
 
-        //window.draw(backgroundSprite);
+       // window.draw(trafficlightspirite);
 
         window.draw(line1, 2, sf::Lines);
         window.draw(line2, 2, sf::Lines);
         window.draw(line3, 2, sf::Lines);
         window.draw(line4, 2, sf::Lines);
-        circle1.setFillColor(get_SFML_color(traffic_light_slave));
-        circle2.setFillColor(get_SFML_color(traffic_light_master));
-        window.draw(circle1);
-        window.draw(circle2);
-
+       /* window.draw(line5, 2, sf::Lines);
+        window.draw(line6, 2, sf::Lines);
+        window.draw(line7, 2, sf::Lines);
+        window.draw(line8, 2, sf::Lines);*/
+        F_verticale_D.setFillColor(get_SFML_color(traffic_light_slave));
+        F_horizontale_D.setFillColor(get_SFML_color(traffic_light_master));
+        F_verticale_G.setFillColor(get_SFML_color(traffic_light_slave));
+        F_horizontal_G.setFillColor(get_SFML_color(traffic_light_master));
+        window.draw(F_verticale_D);
+        window.draw(F_horizontale_D);
+        window.draw(F_verticale_G);
+        window.draw(F_horizontal_G);
         window.display();
     }
 
