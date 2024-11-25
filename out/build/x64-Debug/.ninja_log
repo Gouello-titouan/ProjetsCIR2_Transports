@@ -1,0 +1,5 @@
+# ninja log v5
+12	1844	7542366736805658	traffic_light/CMakeFiles/CarCPP.dir/Car.cpp.obj	ce77362d0a3e5b00
+41	3574	7542366754099112	traffic_light/CMakeFiles/CarCPP.dir/traffic_light.cpp.obj	de170bed80ab806b
+30	3782	7542366756179812	traffic_light/CMakeFiles/CarCPP.dir/main.cpp.obj	9ab26debf2ee9b29
+3783	5770	7542366775718001	traffic_light/CarCPP.exe	eca3f8df2596949a
