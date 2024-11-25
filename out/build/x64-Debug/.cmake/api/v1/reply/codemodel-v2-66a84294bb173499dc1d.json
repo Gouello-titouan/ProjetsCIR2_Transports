@@ -65,9 +65,9 @@
 			[
 				{
 					"directoryIndex" : 1,
-					"id" : "traffic_light::@121fe675099b3038c5ed",
-					"jsonFile" : "target-traffic_light-Debug-e67003b33a22f4c268c6.json",
-					"name" : "traffic_light",
+					"id" : "CarCPP::@121fe675099b3038c5ed",
+					"jsonFile" : "target-CarCPP-Debug-91a2c35139324770ee49.json",
+					"name" : "CarCPP",
 					"projectIndex" : 1
 				}
 			]

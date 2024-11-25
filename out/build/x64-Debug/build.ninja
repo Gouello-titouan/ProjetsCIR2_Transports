@@ -69,42 +69,60 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target traffic_light
+# Object build statements for EXECUTABLE target CarCPP
 
 
 #############################################
-# Order-only phony target for traffic_light
+# Order-only phony target for CarCPP
 
-build cmake_object_order_depends_target_traffic_light: phony || traffic_light\CMakeFiles\traffic_light.dir
+build cmake_object_order_depends_target_CarCPP: phony || traffic_light\CMakeFiles\CarCPP.dir
 
-build traffic_light\CMakeFiles\traffic_light.dir\traffic_light.cpp.obj: CXX_COMPILER__traffic_light_unscanned_Debug C$:\Users\mouhamad.damen\source\repos\ProjetsCIR2_Transports\traffic_light\traffic_light.cpp || cmake_object_order_depends_target_traffic_light
+build traffic_light\CMakeFiles\CarCPP.dir\Car.cpp.obj: CXX_COMPILER__CarCPP_unscanned_Debug C$:\Users\mouhamad.damen\source\repos\ProjetsCIR2_Transports\traffic_light\Car.cpp || cmake_object_order_depends_target_CarCPP
   DEFINES = -DSFML_STATIC
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20 /MTd
   INCLUDES = -external:I"C:\Program Files\SFML\include" -external:W0
-  OBJECT_DIR = traffic_light\CMakeFiles\traffic_light.dir
-  OBJECT_FILE_DIR = traffic_light\CMakeFiles\traffic_light.dir
-  TARGET_COMPILE_PDB = traffic_light\CMakeFiles\traffic_light.dir\
-  TARGET_PDB = traffic_light\traffic_light.pdb
+  OBJECT_DIR = traffic_light\CMakeFiles\CarCPP.dir
+  OBJECT_FILE_DIR = traffic_light\CMakeFiles\CarCPP.dir
+  TARGET_COMPILE_PDB = traffic_light\CMakeFiles\CarCPP.dir\
+  TARGET_PDB = traffic_light\CarCPP.pdb
+
+build traffic_light\CMakeFiles\CarCPP.dir\main.cpp.obj: CXX_COMPILER__CarCPP_unscanned_Debug C$:\Users\mouhamad.damen\source\repos\ProjetsCIR2_Transports\traffic_light\main.cpp || cmake_object_order_depends_target_CarCPP
+  DEFINES = -DSFML_STATIC
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20 /MTd
+  INCLUDES = -external:I"C:\Program Files\SFML\include" -external:W0
+  OBJECT_DIR = traffic_light\CMakeFiles\CarCPP.dir
+  OBJECT_FILE_DIR = traffic_light\CMakeFiles\CarCPP.dir
+  TARGET_COMPILE_PDB = traffic_light\CMakeFiles\CarCPP.dir\
+  TARGET_PDB = traffic_light\CarCPP.pdb
+
+build traffic_light\CMakeFiles\CarCPP.dir\traffic_light.cpp.obj: CXX_COMPILER__CarCPP_unscanned_Debug C$:\Users\mouhamad.damen\source\repos\ProjetsCIR2_Transports\traffic_light\traffic_light.cpp || cmake_object_order_depends_target_CarCPP
+  DEFINES = -DSFML_STATIC
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20 /MTd
+  INCLUDES = -external:I"C:\Program Files\SFML\include" -external:W0
+  OBJECT_DIR = traffic_light\CMakeFiles\CarCPP.dir
+  OBJECT_FILE_DIR = traffic_light\CMakeFiles\CarCPP.dir
+  TARGET_COMPILE_PDB = traffic_light\CMakeFiles\CarCPP.dir\
+  TARGET_PDB = traffic_light\CarCPP.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target traffic_light
+# Link build statements for EXECUTABLE target CarCPP
 
 
 #############################################
-# Link the executable traffic_light\traffic_light.exe
+# Link the executable traffic_light\CarCPP.exe
 
-build traffic_light\traffic_light.exe: CXX_EXECUTABLE_LINKER__traffic_light_Debug traffic_light\CMakeFiles\traffic_light.dir\traffic_light.cpp.obj | C$:\Program$ Files\SFML\lib\sfml-graphics-s-d.lib C$:\Program$ Files\SFML\lib\sfml-window-s-d.lib C$:\Program$ Files\SFML\lib\sfml-system-s-d.lib C$:\Program$ Files\SFML\lib\freetype.lib
+build traffic_light\CarCPP.exe: CXX_EXECUTABLE_LINKER__CarCPP_Debug traffic_light\CMakeFiles\CarCPP.dir\Car.cpp.obj traffic_light\CMakeFiles\CarCPP.dir\main.cpp.obj traffic_light\CMakeFiles\CarCPP.dir\traffic_light.cpp.obj | C$:\Program$ Files\SFML\lib\sfml-graphics-s-d.lib C$:\Program$ Files\SFML\lib\sfml-window-s-d.lib C$:\Program$ Files\SFML\lib\sfml-system-s-d.lib C$:\Program$ Files\SFML\lib\freetype.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = "C:\Program Files\SFML\lib\sfml-graphics-s-d.lib"  "C:\Program Files\SFML\lib\sfml-window-s-d.lib"  "C:\Program Files\SFML\lib\sfml-system-s-d.lib"  OpenGL32.lib  winmm.lib  gdi32.lib  legacy_stdio_definitions.lib  "C:\Program Files\SFML\lib\freetype.lib"  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  OBJECT_DIR = traffic_light\CMakeFiles\traffic_light.dir
+  OBJECT_DIR = traffic_light\CMakeFiles\CarCPP.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = traffic_light\CMakeFiles\traffic_light.dir\
-  TARGET_FILE = traffic_light\traffic_light.exe
-  TARGET_IMPLIB = traffic_light\traffic_light.lib
-  TARGET_PDB = traffic_light\traffic_light.pdb
+  TARGET_COMPILE_PDB = traffic_light\CMakeFiles\CarCPP.dir\
+  TARGET_FILE = traffic_light\CarCPP.exe
+  TARGET_IMPLIB = traffic_light\CarCPP.lib
+  TARGET_PDB = traffic_light\CarCPP.pdb
 
 
 #############################################
@@ -132,9 +150,9 @@ build traffic_light\rebuild_cache: phony traffic_light\CMakeFiles\rebuild_cache.
 # =============================================================================
 # Target aliases.
 
-build traffic_light: phony traffic_light\traffic_light.exe
+build CarCPP: phony traffic_light\CarCPP.exe
 
-build traffic_light.exe: phony traffic_light\traffic_light.exe
+build CarCPP.exe: phony traffic_light\CarCPP.exe
 
 # =============================================================================
 # Folder targets.
@@ -151,7 +169,7 @@ build all: phony traffic_light\all
 #############################################
 # Folder: C:/Users/mouhamad.damen/source/repos/ProjetsCIR2_Transports/out/build/x64-Debug/traffic_light
 
-build traffic_light\all: phony traffic_light\traffic_light.exe
+build traffic_light\all: phony traffic_light\CarCPP.exe
 
 # =============================================================================
 # Unknown Build Time Dependencies.
