@@ -3,6 +3,8 @@
 #include <cmath>
 #include <SFML/Graphics.hpp>
 
+enum class Direction { None, Left, Right, Straight };
+
 class Car
 {
 public:
@@ -17,9 +19,9 @@ public:
     void turnRight();
     void stop();
     void resume();
-
-    bool decisionMade() const;
     void makeDecision();
+    void followPath();
+    bool decisionMade() const;
 
     const sf::RectangleShape& getShape() const;
 
@@ -29,5 +31,6 @@ private:
     float _speed;
     bool _stopped;
     bool _decision_made; // Has the car made a decision after the traffic light?
+    Direction _nextDirection; // The direction the car will take (left, right, straight)
     sf::RectangleShape _shape;
 };

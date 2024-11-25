@@ -57,35 +57,61 @@ int main()
         // Update cars
         for (auto& car : cars)
         {
-            // Stop or move based on traffic light
+            // Check if the car is at an intersection and decide what to do
+            if (car.getY() > 300 && car.getY() < 400 && !car.decisionMade()) // Intersection (horizontal roads)
+            {
+                car.makeDecision();
+                if (traffic_light_slave.get_traffic_color() == Traffic_color::green)
+                {
+                    // Randomly choose whether to go straight, left, or right
+                    std::random_device rd;
+                    std::mt19937 gen(rd());
+                    std::uniform_int_distribution<> dist(0, 2); // 0: straight, 1: left, 2: right
+                    int direction = dist(gen);
+                    if (direction == 1)
+                        car.turnLeft();
+                    else if (direction == 2)
+                        car.turnRight();
+                }
+            }
+
+            // Check if the car should stop or resume
             if (traffic_light_slave.get_traffic_color() == Traffic_color::red && car.getY() > 300 && car.getY() < 400)
                 car.stop();
             else
                 car.resume();
 
-            // Make decision after passing the traffic light
-            if (!car.decisionMade() && car.getY() > 400)
-            {
-                car.makeDecision();
-
-                // Randomly determine whether to turn left, right, or continue
-                std::random_device rd;
-                std::mt19937 gen(rd());
-                std::uniform_int_distribution<> dist_direction(0, 2);
-
-                int direction = dist_direction(gen);
-                if (direction == 1)
-                    car.turnLeft();
-                else if (direction == 2)
-                    car.turnRight();
-            }
-
+            // Move the car along the path
             car.move();
         }
 
         // Render
         window.clear(sf::Color::Black);
 
+        // Draw roads as lines
+        // Horizontal roads
+        sf::VertexArray horizontalRoad1(sf::Lines, 2);
+        horizontalRoad1[0].position = sf::Vector2f(100, 300); // Start of the first horizontal road
+        horizontalRoad1[1].position = sf::Vector2f(900, 300); // End of the first horizontal road
+        window.draw(horizontalRoad1);
+
+        sf::VertexArray horizontalRoad2(sf::Lines, 2);
+        horizontalRoad2[0].position = sf::Vector2f(100, 700); // Start of the second horizontal road
+        horizontalRoad2[1].position = sf::Vector2f(900, 700); // End of the second horizontal road
+        window.draw(horizontalRoad2);
+
+        // Vertical roads
+        sf::VertexArray verticalRoad1(sf::Lines, 2);
+        verticalRoad1[0].position = sf::Vector2f(500, 100); // Start of the first vertical road
+        verticalRoad1[1].position = sf::Vector2f(500, 900); // End of the first vertical road
+        window.draw(verticalRoad1);
+
+        sf::VertexArray verticalRoad2(sf::Lines, 2);
+        verticalRoad2[0].position = sf::Vector2f(450, 100); // Start of the second vertical road
+        verticalRoad2[1].position = sf::Vector2f(450, 900); // End of the second vertical road
+        window.draw(verticalRoad2);
+
+        // Draw cars
         for (const auto& car : cars)
         {
             window.draw(car.getShape());
