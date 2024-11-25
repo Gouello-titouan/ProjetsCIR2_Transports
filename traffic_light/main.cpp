@@ -20,7 +20,7 @@ void car_thread(std::vector<Car>& cars, Traffic_light& traffic_light, std::stop_
         std::this_thread::sleep_for(std::chrono::seconds(wait_time));
 
         sf::Color random_color(dist_color(gen), dist_color(gen), dist_color(gen));
-        Car car(spawn_x, 0.f, 90.f, 1.f, random_color); // Starting at Y = 0, moving vertically (90 degrees)
+        Car car(spawn_x, 0.f, 90.f, 0.2f, random_color); // Starting at Y = 0, moving vertically (90 degrees)
 
         cars.push_back(std::move(car));
     }
