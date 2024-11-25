@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "traffic_light/traffic_light.exe"
+			"path" : "traffic_light/CarCPP.exe"
 		},
 		{
-			"path" : "traffic_light/traffic_light.pdb"
+			"path" : "traffic_light/CarCPP.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -37,19 +37,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 18,
+				"line" : 19,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 19,
+				"line" : 21,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 22,
+				"line" : 24,
 				"parent" : 0
 			},
 			{
@@ -153,11 +153,13 @@
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2
 			]
 		}
 	],
-	"id" : "traffic_light::@121fe675099b3038c5ed",
+	"id" : "CarCPP::@121fe675099b3038c5ed",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -217,8 +219,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "traffic_light",
-	"nameOnDisk" : "traffic_light.exe",
+	"name" : "CarCPP",
+	"nameOnDisk" : "CarCPP.exe",
 	"paths" : 
 	{
 		"build" : "traffic_light",
@@ -230,12 +232,26 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2
 			]
 		}
 	],
 	"sources" : 
 	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "traffic_light/Car.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "traffic_light/main.cpp",
+			"sourceGroupIndex" : 0
+		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
