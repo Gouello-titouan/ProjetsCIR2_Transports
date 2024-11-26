@@ -3,6 +3,8 @@
 #include <vector>
 #include <random>
 
+
+
 void car_thread(std::vector<Car>& cars, Traffic_light& traffic_light, std::stop_token stop_token)
 {
     std::random_device rd;
@@ -57,6 +59,7 @@ int main()
         for (auto& car : cars)
         {
             // Check if the car is at the TurnRightFromUp area
+            
             if (car.getY() >= 800 && car.getX() >= 100 && car.getX() <= 450 && !car.decisionMade())
             {
                 car.makeDecision();
