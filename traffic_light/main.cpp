@@ -1,5 +1,5 @@
-#include "car.hpp"
-#include "traffic_light.hpp"
+#include "../Header/Car.hpp"
+#include "../Header/traffic_light.hpp"
 #include <vector>
 #include <random>
 
@@ -8,7 +8,6 @@ void car_thread(std::vector<Car>& cars, Traffic_light& traffic_light, std::stop_
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> dist_time(2, 5);
-    std::uniform_int_distribution<> dist_direction(0, 2); // 0: straight, 1: left, 2: right
     std::uniform_int_distribution<> dist_color(0, 255);
 
     float spawn_x = 450.f; // X-coordinate for vertical cars (middle of the screen)
@@ -57,31 +56,25 @@ int main()
         // Update cars
         for (auto& car : cars)
         {
-            // Check if the car is at an intersection and decide what to do
-            if (car.getY() > 300 && car.getY() < 400 && !car.decisionMade()) // Intersection (horizontal roads)
+            // Check if the car is at the TurnRightFromUp area
+            if (car.getY() >= 800 && car.getX() >= 100 && car.getX() <= 450 && !car.decisionMade())
             {
                 car.makeDecision();
-                if (traffic_light_slave.get_traffic_color() == Traffic_color::green)
-                {
-                    // Randomly choose whether to go straight, left, or right
-                    std::random_device rd;
-                    std::mt19937 gen(rd());
-                    std::uniform_int_distribution<> dist(0, 2); // 0: straight, 1: left, 2: right
-                    int direction = dist(gen);
-                    if (direction == 1)
-                        car.turnLeft();
-                    else if (direction == 2)
-                        car.turnRight();
-                }
+                car.setPosition(450, 800); // Snap to the exact turning position
+                car.turnRight();           // Turn right
+            }
+            else if (traffic_light_slave.get_traffic_color() == Traffic_color::red && car.getY() > 300 && car.getY() < 400)
+            {
+                // Stop the car at the traffic light
+                car.stop();
+            }
+            else
+            {
+                // Resume movement if the light is green
+                car.resume();
             }
 
-            // Check if the car should stop or resume
-            if (traffic_light_slave.get_traffic_color() == Traffic_color::red && car.getY() > 300 && car.getY() < 400)
-                car.stop();
-            else
-                car.resume();
-
-            // Move the car along the path
+            // Move the car along its path
             car.move();
         }
 
@@ -91,13 +84,13 @@ int main()
         // Draw roads as lines
         // Horizontal roads
         sf::VertexArray horizontalRoad1(sf::Lines, 2);
-        horizontalRoad1[0].position = sf::Vector2f(100, 300); // Start of the first horizontal road
-        horizontalRoad1[1].position = sf::Vector2f(900, 300); // End of the first horizontal road
+        horizontalRoad1[0].position = sf::Vector2f(100, 450); // Start of the first horizontal road
+        horizontalRoad1[1].position = sf::Vector2f(900, 450); // End of the first horizontal road
         window.draw(horizontalRoad1);
 
         sf::VertexArray horizontalRoad2(sf::Lines, 2);
-        horizontalRoad2[0].position = sf::Vector2f(100, 700); // Start of the second horizontal road
-        horizontalRoad2[1].position = sf::Vector2f(900, 700); // End of the second horizontal road
+        horizontalRoad2[0].position = sf::Vector2f(100, 550); // Start of the second horizontal road
+        horizontalRoad2[1].position = sf::Vector2f(900, 550); // End of the second horizontal road
         window.draw(horizontalRoad2);
 
         // Vertical roads
@@ -110,6 +103,14 @@ int main()
         verticalRoad2[0].position = sf::Vector2f(450, 100); // Start of the second vertical road
         verticalRoad2[1].position = sf::Vector2f(450, 900); // End of the second vertical road
         window.draw(verticalRoad2);
+
+        // Turns (visual indicator for TurnRightFromUp area)
+        sf::VertexArray TurnRightFromUp(sf::Lines, 2);
+        TurnRightFromUp[0].position = sf::Vector2f(100, 800); // Start of the turn section
+        TurnRightFromUp[1].position = sf::Vector2f(450, 800); // End of the turn section
+        TurnRightFromUp[0].color = sf::Color::Yellow;         // Highlighted with yellow
+        TurnRightFromUp[1].color = sf::Color::Yellow;
+        window.draw(TurnRightFromUp);
 
         // Draw cars
         for (const auto& car : cars)

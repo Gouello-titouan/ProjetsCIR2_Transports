@@ -3,6 +3,15 @@
     "Local Machine": [
       "out\\build\\x64-Debug",
       "out\\install\\x64-Debug"
+    ],
+    "Ordinateur local": [
+      "out\\build\\x64-Debug",
+      "out\\install\\x64-Debug"
     ]
-  }
+  },
+  "ExpandedNodes": [
+    ""
+  ],
+  "SelectedNode": "\\CMakeLists.txt",
+  "PreviewInSolutionExplorer": false
 }

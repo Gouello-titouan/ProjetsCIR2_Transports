@@ -1,4 +1,4 @@
-#include "Car.hpp"
+#include "../Header/Car.hpp"
 
 Car::Car(float x, float y, float angle, float speed, sf::Color color)
     : _x(x), _y(y), _angle(angle), _speed(speed), _stopped(false), _decision_made(false), _nextDirection(Direction::Straight)
@@ -13,6 +13,13 @@ Car::Car(float x, float y, float angle, float speed, sf::Color color)
 float Car::getX() const { return _x; }
 float Car::getY() const { return _y; }
 float Car::getAngle() const { return _angle; }
+
+void Car::setPosition(float newX, float newY)
+{
+    _x = newX;
+    _y = newY;
+    _shape.setPosition(_x, _y);
+}
 
 void Car::move()
 {
