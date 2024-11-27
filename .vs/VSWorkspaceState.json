@@ -1,6 +1,15 @@
 {
+  "ExpandedNodes": [
+    ""
+  ],
+  "SelectedNode": "\\C:\\Users\\mouhamad.damen\\Source\\Repos\\ProjetsCIR2_Transports",
+  "PreviewInSolutionExplorer": false,
   "OutputFoldersPerTargetSystem": {
     "Local Machine": [
+      "out\\build\\x64-Debug",
+      "out\\install\\x64-Debug"
+    ],
+    "Ordinateur local": [
       "out\\build\\x64-Debug",
       "out\\install\\x64-Debug"
     ]

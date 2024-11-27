@@ -89,8 +89,8 @@ std::ostream& operator<<(std::ostream& os, const Traffic_light& traffic_light)
 void run_traffic_light(Traffic_light& traffic_light_master, Traffic_light& traffic_light_slave, std::stop_token stop_token)
 {
     // Initial state
-    traffic_light_master.set_traffic_color(Traffic_color::green);
-    traffic_light_slave.set_traffic_color(Traffic_color::red);
+    traffic_light_master.set_traffic_color(Traffic_color::red);
+    traffic_light_slave.set_traffic_color(Traffic_color::green);
 
     while (!stop_token.stop_requested())
     {
