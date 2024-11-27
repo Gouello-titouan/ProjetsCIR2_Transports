@@ -7,5 +7,7 @@ A faire :
 - respect code de la route
 - interaction entre les différents véhicules (attendre que le bus ou le piéton passe)
 
+- refaire un gitignore
+
   
 - interface graphique
