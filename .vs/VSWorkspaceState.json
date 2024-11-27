@@ -3,16 +3,6 @@
     "Local Machine": [
       "out\\build\\x64-Debug",
       "out\\install\\x64-Debug"
-    ],
-    "Ordinateur local": [
-      "out\\build\\x64-Debug",
-      "out\\install\\x64-Debug"
     ]
-  },
-  "ExpandedNodes": [
-    "",
-    "\\traffic_light"
-  ],
-  "SelectedNode": "\\traffic_light\\Car.cpp",
-  "PreviewInSolutionExplorer": false
+  }
 }

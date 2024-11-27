@@ -1,11 +1,5 @@
 # ninja log v5
-29	931	7543341923952274	traffic_light/CMakeFiles/CarCPP.dir/Car.cpp.obj	8d9f7285bf9b91f8
-31	1764	7543293743087826	traffic_light/CMakeFiles/CarCPP.dir/traffic_light.cpp.obj	f9e79c5a1d8b8c1a
-3	1759	7543343629579640	traffic_light/CMakeFiles/CarCPP.dir/main.cpp.obj	cbd800bc91feb810
-1760	2093	7543343632111174	traffic_light/CarCPP.exe	4f5ade0ea0a68bba
-59	1212	7544151135233816	traffic_light/CMakeFiles/CarCPP.dir/Car.cpp.obj	8d9f7285bf9b91f8
-70	1741	7544151140857725	traffic_light/CMakeFiles/CarCPP.dir/main.cpp.obj	cbd800bc91feb810
-1741	2915	7544151151062625	traffic_light/CarCPP.exe	4f5ade0ea0a68bba
-30	834	7544151484298637	traffic_light/CMakeFiles/CarCPP.dir/Car.cpp.obj	8d9f7285bf9b91f8
-40	1411	7544151490047123	traffic_light/CMakeFiles/CarCPP.dir/main.cpp.obj	cbd800bc91feb810
-1412	1843	7544151493690941	traffic_light/CarCPP.exe	4f5ade0ea0a68bba
+10	907	7544165909620727	CMakeFiles/mainCPP.dir/src/Car.cpp.obj	15c87aad6e2fab8d
+19	1487	7544165915409737	CMakeFiles/mainCPP.dir/src/traffic_light.cpp.obj	191acd9de5c7306d
+3	1655	7544165917081132	CMakeFiles/mainCPP.dir/main.cpp.obj	15efd15140cd4302
+1656	3279	7544165933036330	mainCPP.exe	dc89e2dc4170e188
