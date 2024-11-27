@@ -2,10 +2,17 @@
 	"artifacts" : 
 	[
 		{
+<<<<<<<< HEAD:out/build/x64-Debug/.cmake/api/v1/reply/target-CarCPP-Debug-91a2c35139324770ee49.json
 			"path" : "traffic_light/CarCPP.exe"
 		},
 		{
 			"path" : "traffic_light/CarCPP.pdb"
+========
+			"path" : "mainCPP.exe"
+		},
+		{
+			"path" : "mainCPP.pdb"
+>>>>>>>> 2ed4821b682b6e273a3556e0195e0a9fe3e90d93:out/build/x64-Debug/.cmake/api/v1/reply/target-mainCPP-Debug-209ca388eca7b96c3354.json
 		}
 	],
 	"backtrace" : 1,
@@ -24,7 +31,7 @@
 		],
 		"files" : 
 		[
-			"traffic_light/CMakeLists.txt",
+			"CMakeLists.txt",
 			"C:/Program Files/SFML/lib/cmake/SFML/SFMLStaticTargets.cmake",
 			"C:/Program Files/SFML/lib/cmake/SFML/SFMLConfig.cmake",
 			"C:/Program Files/SFML/lib/cmake/SFML/SFMLConfigDependencies.cmake"
@@ -43,13 +50,21 @@
 			{
 				"command" : 1,
 				"file" : 0,
+<<<<<<<< HEAD:out/build/x64-Debug/.cmake/api/v1/reply/target-CarCPP-Debug-91a2c35139324770ee49.json
 				"line" : 21,
+========
+				"line" : 22,
+>>>>>>>> 2ed4821b682b6e273a3556e0195e0a9fe3e90d93:out/build/x64-Debug/.cmake/api/v1/reply/target-mainCPP-Debug-209ca388eca7b96c3354.json
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
+<<<<<<<< HEAD:out/build/x64-Debug/.cmake/api/v1/reply/target-CarCPP-Debug-91a2c35139324770ee49.json
 				"line" : 24,
+========
+				"line" : 25,
+>>>>>>>> 2ed4821b682b6e273a3556e0195e0a9fe3e90d93:out/build/x64-Debug/.cmake/api/v1/reply/target-mainCPP-Debug-209ca388eca7b96c3354.json
 				"parent" : 0
 			},
 			{
@@ -109,7 +124,7 @@
 			{
 				"command" : 7,
 				"file" : 0,
-				"line" : 11,
+				"line" : 10,
 				"parent" : 0
 			}
 		]
@@ -159,7 +174,11 @@
 			]
 		}
 	],
+<<<<<<<< HEAD:out/build/x64-Debug/.cmake/api/v1/reply/target-CarCPP-Debug-91a2c35139324770ee49.json
 	"id" : "CarCPP::@121fe675099b3038c5ed",
+========
+	"id" : "mainCPP::@6890427a1f51a3e7e1df",
+>>>>>>>> 2ed4821b682b6e273a3556e0195e0a9fe3e90d93:out/build/x64-Debug/.cmake/api/v1/reply/target-mainCPP-Debug-209ca388eca7b96c3354.json
 	"link" : 
 	{
 		"commandFragments" : 
@@ -219,12 +238,17 @@
 		],
 		"language" : "CXX"
 	},
+<<<<<<<< HEAD:out/build/x64-Debug/.cmake/api/v1/reply/target-CarCPP-Debug-91a2c35139324770ee49.json
 	"name" : "CarCPP",
 	"nameOnDisk" : "CarCPP.exe",
+========
+	"name" : "mainCPP",
+	"nameOnDisk" : "mainCPP.exe",
+>>>>>>>> 2ed4821b682b6e273a3556e0195e0a9fe3e90d93:out/build/x64-Debug/.cmake/api/v1/reply/target-mainCPP-Debug-209ca388eca7b96c3354.json
 	"paths" : 
 	{
-		"build" : "traffic_light",
-		"source" : "traffic_light"
+		"build" : ".",
+		"source" : "."
 	},
 	"sourceGroups" : 
 	[
@@ -243,19 +267,31 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+<<<<<<<< HEAD:out/build/x64-Debug/.cmake/api/v1/reply/target-CarCPP-Debug-91a2c35139324770ee49.json
 			"path" : "traffic_light/Car.cpp",
+========
+			"path" : "main.cpp",
+>>>>>>>> 2ed4821b682b6e273a3556e0195e0a9fe3e90d93:out/build/x64-Debug/.cmake/api/v1/reply/target-mainCPP-Debug-209ca388eca7b96c3354.json
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+<<<<<<<< HEAD:out/build/x64-Debug/.cmake/api/v1/reply/target-CarCPP-Debug-91a2c35139324770ee49.json
 			"path" : "traffic_light/main.cpp",
+========
+			"path" : "src/Car.cpp",
+>>>>>>>> 2ed4821b682b6e273a3556e0195e0a9fe3e90d93:out/build/x64-Debug/.cmake/api/v1/reply/target-mainCPP-Debug-209ca388eca7b96c3354.json
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+<<<<<<<< HEAD:out/build/x64-Debug/.cmake/api/v1/reply/target-CarCPP-Debug-91a2c35139324770ee49.json
 			"path" : "traffic_light/traffic_light.cpp",
+========
+			"path" : "src/traffic_light.cpp",
+>>>>>>>> 2ed4821b682b6e273a3556e0195e0a9fe3e90d93:out/build/x64-Debug/.cmake/api/v1/reply/target-mainCPP-Debug-209ca388eca7b96c3354.json
 			"sourceGroupIndex" : 0
 		}
 	],
