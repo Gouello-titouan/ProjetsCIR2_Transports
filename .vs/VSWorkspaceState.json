@@ -10,8 +10,9 @@
     ]
   },
   "ExpandedNodes": [
-    ""
+    "",
+    "\\traffic_light"
   ],
-  "SelectedNode": "\\CMakeLists.txt",
+  "SelectedNode": "\\traffic_light\\Car.cpp",
   "PreviewInSolutionExplorer": false
 }
