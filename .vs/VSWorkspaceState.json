@@ -1,9 +1,4 @@
 {
-  "ExpandedNodes": [
-    ""
-  ],
-  "SelectedNode": "\\C:\\Users\\mouhamad.damen\\Source\\Repos\\ProjetsCIR2_Transports",
-  "PreviewInSolutionExplorer": false,
   "OutputFoldersPerTargetSystem": {
     "Local Machine": [
       "out\\build\\x64-Debug",
@@ -13,5 +8,10 @@
       "out\\build\\x64-Debug",
       "out\\install\\x64-Debug"
     ]
-  }
+  },
+  "ExpandedNodes": [
+    ""
+  ],
+  "SelectedNode": "\\C:\\Users\\titouan.gouello\\Source\\Repos\\ProjetsCIR2_Transports",
+  "PreviewInSolutionExplorer": false
 }

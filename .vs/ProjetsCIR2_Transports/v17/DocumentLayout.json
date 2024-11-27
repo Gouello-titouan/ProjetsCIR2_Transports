@@ -42,8 +42,7 @@
               "RelativeToolTip": "src\\traffic_light.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-27T13:13:06.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T13:13:06.862Z"
             },
             {
               "$type": "Document",
@@ -55,16 +54,15 @@
               "RelativeToolTip": "src\\Car.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-27T13:12:57.517Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T13:12:57.517Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\titouan.gouello\\Source\\Repos\\ProjetsCIR2_Transports\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\titouan.gouello\\source\\repos\\ProjetsCIR2_Transports\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "C:\\Users\\titouan.gouello\\Source\\Repos\\ProjetsCIR2_Transports\\main.cpp",
+              "ToolTip": "C:\\Users\\titouan.gouello\\source\\repos\\ProjetsCIR2_Transports\\main.cpp",
               "RelativeToolTip": "main.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "CMakeLists.txt",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAABEAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-11-27T13:11:36.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T13:11:36.868Z"
             }
           ]
         }
