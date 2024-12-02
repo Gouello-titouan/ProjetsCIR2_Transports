@@ -1,7 +1,12 @@
 #include "../header/Car.hpp"
+#include "../Header/traffic_light.hpp"
+#include <iostream>
+#include <thread>
+#include <mutex>
 
-Car::Car(float x, float y, float angle, float speed, sf::Color color)
-    : _x(x), _y(y), _angle(angle), _speed(speed), _stopped(false), _decision_made(false), _nextDirection(Direction::Straight)
+#define safety_distance  50.f
+
+Car::Car(float x, float y, float angle, float speed, sf::Color color): _x(x), _y(y), _angle(angle), _speed(speed), _stopped(false), _light_is_green(true), _light_is_red(false)
 {
     _shape.setSize(sf::Vector2f(30.f, 15.f));
     _shape.setFillColor(color);
@@ -21,13 +26,34 @@ void Car::setPosition(float newX, float newY)
     _shape.setPosition(_x, _y);
 }
 
-void Car::move()
+bool Car::distanceTo(const std::vector<Car>& otherCars) const
 {
-    if (!_stopped)
+    for (const auto& car : otherCars)
     {
-        // Si la voiture doit suivre un chemin défini
+        if (this == &car) continue;
+
+        float dx = car.getX() - _x;
+        float dy = car.getY() - _y;
+        float distance = std::sqrt(dx * dx + dy * dy);
+
+        if (distance < safety_distance)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+void Car::move(const std::vector<Car>& otherCars)
+{
+    if (_light_is_green && !distanceTo(otherCars))
+    {
         followPath();
         _shape.setPosition(_x, _y);
+    }
+    if (_light_is_red)
+    {
+        stop();
     }
 }
 
@@ -40,37 +66,53 @@ void Car::turnLeft()
 
 void Car::turnRight()
 {
-    _angle += 90.f;
+    _angle -= 90.f;
     _nextDirection = Direction::Right;
     _shape.setRotation(_angle);
 }
 
 void Car::stop() { _stopped = true; }
 void Car::resume() { _stopped = false; }
+bool Car::isStopped() const { return _stopped; }
 
-bool Car::decisionMade() const { return _decision_made; }
-void Car::makeDecision() { _decision_made = true; }
+void Car::light_is_red()
+{
+    _light_is_red = true;
+    _light_is_green = false;
+}
+
+void Car::light_is_green()
+{
+    _light_is_green = true;
+    _light_is_red = false;
+}
 
 void Car::followPath()
 {
-    if (_nextDirection == Direction::Straight)
-    {
-        // Déplacer la voiture suivant son angle actuel
-        _x += cos(_angle * M_PI / 180.0) * _speed;
-        _y += sin(_angle * M_PI / 180.0) * _speed;
-    }
-    else if (_nextDirection == Direction::Left)
-    {
-        // Déplacer la voiture à gauche (90°)
-        _x += cos((_angle + 90.f) * M_PI / 180.0) * _speed;
-        _y += sin((_angle + 90.f) * M_PI / 180.0) * _speed;
-    }
-    else if (_nextDirection == Direction::Right)
-    {
-        // Déplacer la voiture à droite (-90°)
-        _x += cos((_angle - 90.f) * M_PI / 180.0) * _speed;
-        _y += sin((_angle - 90.f) * M_PI / 180.0) * _speed;
-    }
+    _x += cos(_angle * M_PI / 180.0) * _speed;
+    _y += sin(_angle * M_PI / 180.0) * _speed;
 }
 
 const sf::RectangleShape& Car::getShape() const { return _shape; }
+
+void Car::run(std::vector<Car>& cars, Traffic_light& traffic_light, std::stop_token stop_token)
+{
+    while (!stop_token.stop_requested())
+    {
+        //std::this_thread::sleep_for(std::chrono::milliseconds(50)); 
+        if (traffic_light.get_traffic_color() == Traffic_color::red && getY() > 300 && getY() < 400)
+        {
+            light_is_red();
+            std::cout << "Traffic light is red at " << getX() << ", " << getY() << "\n";
+        }
+        else if (traffic_light.get_traffic_color() == Traffic_color::green && getY() > 300 && getY() < 400)
+        {
+            light_is_green();
+            resume();
+            std::cout << "Traffic light is green at " << getX() << ", " << getY() << "\n";
+        }
+
+        move(cars);
+    }
+}
+

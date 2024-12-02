@@ -1,0 +1,9 @@
+# ninja log v5
+35	1073	7547879640796392	CMakeFiles/mainCPP.dir/src/Car.cpp.obj	787a02e72835754a
+27	1231	7547819056242826	CMakeFiles/mainCPP.dir/src/traffic_light.cpp.obj	b3a8080de99d188f
+32	1513	7547879930596725	CMakeFiles/mainCPP.dir/main.cpp.obj	b7b9e69db67ccc8a
+1514	1795	7547879932859780	mainCPP.exe	9893bc1ad791ff3a
+15	1726	7548353075528097	CMakeFiles/mainCPP.dir/src/Car.cpp.obj	787a02e72835754a
+40	1616	7548353256725470	CMakeFiles/mainCPP.dir/src/Car.cpp.obj	787a02e72835754a
+52	1727	7548382211901850	CMakeFiles/mainCPP.dir/src/Car.cpp.obj	787a02e72835754a
+11	1408	7548383437306597	CMakeFiles/mainCPP.dir/src/Car.cpp.obj	787a02e72835754a
